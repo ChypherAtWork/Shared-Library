@@ -1,6 +1,4 @@
  def call(){
-    def tagsOutput = sh(script: 'git tag', returnStdout: true).trim()
-    println "Git tags: ${tagsOutput}"
     sh """
         #!/bin/bash
         set +x
