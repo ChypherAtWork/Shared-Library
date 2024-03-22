@@ -18,7 +18,7 @@ def call(){
                 local CURRENT="\$1"
                 local PART="\$2"
                 grep -E '^[0-9]+\\.[0-9]+\\.[0-9]+\\$' >/dev/null <<< "\$CURRENT" || {
-                    echo "wrong or no version string: '\$CURRENT'" >&2
+                    echo "wrong or no version string: '\$CURRENT'" >\&2
                     return \$ERROR_VERSION_STRING
                 }
                 local MAJOR=$(echo "\$CURRENT" | cut -d '.' -f1)
