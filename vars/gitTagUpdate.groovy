@@ -26,7 +26,7 @@ def call(){
             future) postfix="[0-9]+\\.[0-9]+\\.[0-9]\\+dev";;
             dev) postfix="[0-9]+\\.[0-9]+\\.[0-9]\\+dev";;
             qa) postfix="[0-9]+\\.[0-9]+\\.[0-9]\\+qa";;
-            master) postfix="[0-9]+\\.[0-9]+\\.[0-9]+\$master";;
+            master) postfix="[0-9]+\\.[0-9]+\\.[0-9]+master";;
             main) postfix="[0-9]+\\.[0-9]+\\.[0-9]+\$";;
         esac
 
