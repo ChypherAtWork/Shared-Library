@@ -1,5 +1,5 @@
 def call(){
-    // def config = [:]
+    def config = [:]
     // body.resolveStrategy = Closure.DELEGATE_FIRST
     // body.delegate = config
     // body()
