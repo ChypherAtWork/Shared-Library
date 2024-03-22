@@ -1,5 +1,6 @@
 def call() {
     sh'''
+        git tag
         echo " 
             #!/bin/bash
             # requires extended (gnu) getopt with long options
