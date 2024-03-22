@@ -1,8 +1,8 @@
 def call(){
     def config = [:]
-    //body.resolveStrategy = Closure.DELEGATE_FIRST
-    //body.delegate = config
-    //body()
+    body.resolveStrategy = Closure.DELEGATE_FIRST
+    body.delegate = config
+    body()
 
     try {
         timeout(config.timeout ?: 180) {
