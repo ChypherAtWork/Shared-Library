@@ -7,11 +7,11 @@ def call(){
     try {
         timeout(config.timeout ?: 180) {
             stage('Create a Version File') {
-                version()
+                version(config)
             }
 
             stage('Fetch Base Tag') {
-                gitTagUpdate()
+                gitTagUpdate(config)
             }
 
             if (currentBuild.result == null) {
