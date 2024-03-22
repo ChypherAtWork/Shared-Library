@@ -21,9 +21,9 @@ def call(){
                     echo "wrong or no version string: '\$CURRENT'" >&2
                     return \$ERROR_VERSION_STRING
                 }
-                local MAJOR=\$(cut -d '.' -f1 <<< "\$CURRENT")
-                local MINOR=\$(cut -d '.' -f2 <<< "\$CURRENT")
-                local BUILD=\$(cut -d '.' -f3 <<< "\$CURRENT")
+                local MAJOR=$(echo "\$CURRENT" | cut -d '.' -f1)
+                local MINOR=$(echo "\$CURRENT" | cut -d '.' -f2)
+                local BUILD=$(echo "\$CURRENT" | cut -d '.' -f3)
                 case "\$PART" in
                     major) let MAJOR+=1;;
                     minor) let MINOR+=1;;
