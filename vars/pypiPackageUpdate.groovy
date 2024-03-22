@@ -1,5 +1,5 @@
 def call(){
-    def config = [:]
+    // def config = [:]
     // body.resolveStrategy = Closure.DELEGATE_FIRST
     // body.delegate = config
     // body()
@@ -7,11 +7,11 @@ def call(){
     try {
         timeout(config.timeout ?: 180) {
             stage('Create a Version File') {
-                version(config)
+                version()
             }
 
             stage('Fetch Base Tag') {
-                gitTagUpdate(config)
+                gitTagUpdate()
             }
 
             if (currentBuild.result == null) {
