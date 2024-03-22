@@ -21,7 +21,7 @@ def call(){
                 main -> 2.0.0
             "
         git remote remove origin && git remote add origin '${env.GIT_URL}'
-        set -x;
+        set -xv;
         case "${env.BRANCH_NAME}" in
             future) postfix="[0-9]+\\.[0-9]+\\.[0-9]\\+dev";;
             dev) postfix="[0-9]+\\.[0-9]+\\.[0-9]\\+dev";;
