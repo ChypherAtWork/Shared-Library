@@ -35,7 +35,7 @@ def call(){
         # BASE_TAG=`git describe --match "\$postfix" --tags --abbrev=0 2>/dev/null || true`
 
         if [ -z "\$BASE_TAG" ]; then
-            echo "${env.GIT_URL}"
+            echo "\$env.GIT_URL"
             echo "${env.BRANCH_NAME}"
             echo -e "\$err"
             exit 1
