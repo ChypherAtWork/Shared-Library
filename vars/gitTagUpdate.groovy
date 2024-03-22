@@ -31,7 +31,7 @@
             master) postfix="[0-9]+\\.[0-9]+\\.[0-9]+\$";;
             main) postfix="[0-9]+\\.[0-9]+\\.[0-9]+\$";;
         esac
-        base=\$(git tag)
+        base="\$(git tag)"
         echo "\$base"
         # Fetch the base release tag related to the current working branch
         BASE_TAG=`git tag | grep -E "\$postfix" | sort -V | tail -n 1`
