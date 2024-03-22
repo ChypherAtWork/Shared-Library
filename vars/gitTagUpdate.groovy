@@ -20,9 +20,9 @@ def call(){
                 qa   -> 2.0.0+qa
                 main -> 2.0.0
             "
-        git remote remove origin && git remote add origin 'https://${GIT_CRED_PSW}@github.com/qritive/qritive-ai-data.git'
+        git remote remove origin && git remote add origin '${env.GIT_URL}'
         set -x;
-        case "\$GIT_BRANCH" in
+        case "${env.BRANCH_NAME}" in
             future) postfix="[0-9]+\\.[0-9]+\\.[0-9]\\+dev";;
             dev) postfix="[0-9]+\\.[0-9]+\\.[0-9]\\+dev";;
             qa) postfix="[0-9]+\\.[0-9]+\\.[0-9]\\+qa";;
