@@ -17,7 +17,7 @@ def call() {
             version() {
                 local CURRENT="$1"
                 local PART="$2"
-                grep -E '^[0-9]+\.[0-9]+\.[0-9]+$' >/dev/null <<< "$CURRENT" || {
+                grep -E '^[0-9]+\\.[0-9]+\\.[0-9]+\$' >/dev/null <<< "$CURRENT" || {
                     echo "wrong or no version string: '$CURRENT'" >&2
                     return $ERROR_VERSION_STRING
                 }
