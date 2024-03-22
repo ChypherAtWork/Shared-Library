@@ -1,4 +1,4 @@
-def call(){
+ def call(){
     sh """
         #!/bin/bash
         set +x
@@ -29,7 +29,7 @@ def call(){
             master) postfix="[0-9]+\\.[0-9]+\\.[0-9]+\$";;
             main) postfix="[0-9]+\\.[0-9]+\\.[0-9]+\$";;
         esac
-        base=\$(git tag)
+        pwd
         # Fetch the base release tag related to the current working branch
         BASE_TAG=`git tag | grep -E "\$postfix" | sort -V | tail -n 1`
         # BASE_TAG=`git describe --match "\$postfix" --tags --abbrev=0 2>/dev/null || true`
@@ -63,6 +63,6 @@ def call(){
         pip install twine && pip install setuptools==61.2.0 && python -m pip install wheel > /dev/null
         export AI_DATA_VERSION=\$NEW_GIT_RELEASE_TAG
         python setup.py bdist_wheel
-        python -m twine upload --skip-existing dist/* -u ${PYPI_USR} -p ${PYPI_PSW} --repository-url ${PYPI_REPO} --verbose
+        #python -m twine upload --skip-existing dist/* -u ${PYPI_USR} -p ${PYPI_PSW} --repository-url ${PYPI_REPO} --verbose
     """
 }
