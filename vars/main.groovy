@@ -1,5 +1,6 @@
 package com.ansible
 
 def callTestScript() {
-    test()
+    def main = load('./test.groovy)
+    main()
 }
